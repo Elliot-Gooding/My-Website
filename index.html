@@ -7,20 +7,20 @@
     <title>My Website</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 <body>
-    <div class="header-background-blur"></div>
     <div class="header-wrapper">
         <header class="header">
             <div></div>
             <div class="item1" onClick="document.getElementById('greeting').scrollIntoView();">
                 <h5>Home</h5>
             </div>
-            <div class="item2" onClick="document.getElementById('skills').scrollIntoView();">
+            <div class="item2" onClick="document.getElementById('skills-scroll').scrollIntoView();">
                 <h5>Skills</h5>
             </div>
-            <div class="item3" onClick="document.getElementById('projects').scrollIntoView();">
+            <div class="item3" onClick="document.getElementById('projects-scroll').scrollIntoView();">
                 <h5>Projects</h5>
             </div>
             <div class="item4" onClick="document.getElementById('contact').scrollIntoView();">
@@ -31,15 +31,74 @@
     <hr class="header-divider">
     <div class="content-layout">
         <div class="greeting" id="greeting">
+            <div class="greeting-background" id="greeting-background"></div>
             <div class="greeting-text-wrapper">
                 <span class="small-greeting-text">Hi, I'm</span>
                 <span class="large-greeting-text">Elliot Gooding.</span>
                 <span class="large-greeting-text">Developer.</span>
             </div>
+            <div id="skills-scroll"></div>
         </div>
-        <div class="skills" id="skills"></div>
-        <div class="projects" id="projects"></div>
+        <div class="skills-wrapper">            
+            <h1>My Skills</h1>
+            <div class="skills" id="skills">
+                <div class="about-me scroll-animation">
+                    <h1>About me</h1>
+                    <p>Hi, I'm Elliot, a dedicated college student with a strong passion for software development. I've always been drawn to programming due to its fascinating ability of solving complex problems. This fascination with problem solving is what drives me to proactively learn new skills and information so I can move on to bigger, and harder problems. </p>
+                    <p></p>
+                </div>
+                <div class="languages scroll-animation">
+                    <h3>I am proficient at the following languages:</h3>
+                    <ul>
+                        <li id="Python">Python</li>
+                        <li id="Javascript">Javascript</li>
+                        <li id="HTML">HTML</li>
+                        <li id="CSS">CSS</li>
+                        <li id="Java">Java</li>
+                        <li id="Git">Git</li>
+                        <li id="C">C++</li>
+                    </ul>
+                </div>
+                <div class="qualifications scroll-animation">
+                    <h1>Qualifications</h1>
+                    <ul>
+                        <li>GCSE Computer Science - Grade 9</li>
+                        <li>GCSE Maths - Grade 9</li>
+                        <li>GCSE Further Maths - Grade 9</li>
+                        <li>GCSE Physics - Grade 9</li>
+                        <li>GCSE Chemistry - Grade 9</li>
+                        <li>GCSE Biology - Grade 9</li>
+                        <li>UKMT Senior - Gold</li>
+                        <li>UKMT Intermediate - Gold</li>
+                    </ul>
+                    <p>I also have various high level music qualifications which I have achieved in my free time</p>
+                </div>
+            </div>
+            <div id="projects-scroll"></div>
+        </div>
+        <div class="projects" id="projects">
+            <div class="projects-text-wrapper" id="projects-text-wrapper">
+                <h1>My Projects</h1>
+                <ul>
+                    <li>3D Wireframe Renderer</li>
+                    <li>3D Gardening Game with collision physics</li>
+                    <li>Recreation of google dinosaur</li>
+                    <li>2048</li>
+                    <li>Snake</li>
+                    <li>tic-tac-toe</li>
+                </ul>
+                <button class="renderer-button" id="renderer-button">Try out my 3D wireframe renderer</button>
+            </div>
+            <div class="renderer-container shrink-out" id="renderer-container">
+                <div class="text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+                <div class="window">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+            </div>
+        </div>
         <div class="contact" id="contact"></div>
     </div>
+
+    <script src="greeting-animation.js"></script>
+    <script src="fade-in-animation.js"></script>
+    <script src="3d-renderer\loader.js"></script>
 </body>
 </html>
