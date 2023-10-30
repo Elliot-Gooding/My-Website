@@ -5,6 +5,7 @@ class Ball{
     constructor(){
         this.x = 50;
         this.y = 50;
+        this.offSetAmount = Math.floor(Math.random()*1000);
         this.speed = 0.0009;
         this.accel = 0.00005;
         this.size = 1;
@@ -14,6 +15,7 @@ class Ball{
         this.angle = Math.random() * (360 - 0) + 0;
         [this.xVec, this.yVec] = this.getVectors(this.angle);
         this.ballElement = this.createBall();
+        this.startOffSet()
         this.startBall();
     }
     
@@ -23,6 +25,13 @@ class Ball{
         const vectors = [x,y];
 
         return [x,y];
+    }
+
+    startOffSet(){
+        for (let i = 0; i<this.offSetAmount; i++){
+            this.move();
+            this.display();
+        }
     }
 
     startBall(){
@@ -65,9 +74,9 @@ class Ball{
     display(){
         this.ballElement.style.left = this.x + "vw";
         this.ballElement.style.top = this.y + "vh";
-        this.ballElement.style.width = this.size + "px";
-        this.ballElement.style.height = this.size + "px";
-        this.ballElement.style.borderRadius = this.size/2 + "px";
+        this.ballElement.style.width = this.size/15 + "vw";
+        this.ballElement.style.height = this.size/15 + "vw";
+        this.ballElement.style.borderRadius = this.size/30 + "vw";
     }
 
     ballOutOfRender(){

@@ -8,7 +8,7 @@ const character = {
 }
 
 const cam = {
-    yaw:45,
+    yaw:30,
     pitch:0,
     roll:0,
     mouseSpeed:1,

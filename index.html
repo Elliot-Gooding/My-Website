@@ -23,7 +23,7 @@
             <div class="item3" onClick="document.getElementById('projects-scroll').scrollIntoView();">
                 <h5>Projects</h5>
             </div>
-            <div class="item4" onClick="document.getElementById('contact').scrollIntoView();">
+            <div class="item4" onClick="document.getElementById('contacts-scroll').scrollIntoView();">
                 <h5>Contact</h5>
             </div>
         </header>
@@ -78,18 +78,38 @@
         </div>
         <div class="projects" id="projects">
             <div class="projects-text-wrapper scroll-animation" id="projects-text-wrapper">
-                <h1>My Projects</h1>
-                <ul>
-                    <li>3D Wireframe Renderer</li>
-                    <li>3D Gardening Game with collision physics</li>
-                    <li>Recreation of google dinosaur</li>
-                    <li>2048</li>
-                    <li>Snake</li>
-                    <li>tic-tac-toe</li>
-                    <li>stagger in</li>
-                </ul>
-                <button class="renderer-button" id="renderer-button">Check out my 3D wireframe renderer</button>
-            </div>
+                <h1 id="project-title">My Projects</h1>
+                <svg id="project-svg" class="project-svg" width="25vw" height="60vh" viewbox="50 25 350 250">
+                    <path class="animated-line" style="color:none; fill:none; stroke:rgb(0,3,34); stroke-width:0.3; stroke-linecap:round; stroke-linejoin:round; -inkscape-stroke:none;" id="animated-line" d="m 76.787901,83.475354 c -0.07268,-0.0013 -0.132805,0.05625 -0.134765,0.128906 -0.0013,0.07268 0.05625,0.132806 0.128906,0.134766 0.993965,0.02161 1.445192,0.529919 1.679687,1.046875 0.234496,0.516956 0.226563,1.033203 0.226563,1.033203 -1.9e-5,0.0013 -1.9e-5,0.0026 0,0.0039 l -0.07063,71.102426 c -1.76e-4,0.0727 0.251135,0.053 0.323794,0.0539 0.03834,0.0206 0.01898,-47.70777 0.01881,-47.78119 l -0.0083,-23.373173 v -0.002 c 4.3e-5,-0.0018 0.01444,-0.567817 -0.248047,-1.146484 -0.262916,-0.579609 -0.8299,-1.177561 -1.916016,-1.201172 z m 0.153505,-8.45387 c -2.413422,0 -4.361328,1.947906 -4.361328,4.361328 0,2.413423 1.947906,4.359375 4.361328,4.359375 h 19.533203 c 2.413423,0 4.361331,-1.945952 4.361331,-4.359375 0,-2.413422 -1.947908,-4.361328 -4.361331,-4.361328 z m 0,0.265625 h 19.533203 c 2.271197,0 4.095701,1.824507 4.095701,4.095703 0,2.271197 -1.824504,4.095704 -4.095701,4.095704 H 76.941406 c -2.271196,0 -4.095703,-1.824507 -4.095703,-4.095704 0,-2.271196 1.824507,-4.095703 4.095703,-4.095703 z" fill="transparent"/>
+                </svg>
+                <table>
+                    <tr>
+                        <td><img src="icons/arrow.png" class="project-arrow hidden" id="arrow1"></td>
+                        <td class="project">3D Wireframe Renderer</td>
+                    </tr>
+                    <tr>
+                        <td><img src="icons/arrow.png" class="project-arrow hidden" id="arrow2"></td>
+                        <td class="project">3D Game + collision physics</td>
+                    </tr>
+                    <tr>
+                        <td><img src="icons/arrow.png" class="project-arrow hidden" id="arrow3"></td>
+                        <td class="project">Recreation of google dinosaur</td>
+                    </tr>
+                    <tr>
+                        <td><img src="icons/arrow.png" class="project-arrow hidden" id="arrow4"></td>
+                        <td class="project">2048</td>
+                    </tr>
+                    <tr>
+                        <td><img src="icons/arrow.png" class="project-arrow hidden" id="arrow5"></td>
+                        <td class="project">Snake</td>
+                    </tr>
+                    <tr>
+                        <td><img src="icons/arrow.png" class="project-arrow hidden" id="arrow6"></td>
+                        <td class="project">tic-tac-toe</td>
+                    </tr>
+                </table>
+                    <div class="renderer-button hide-renderer-button" id="renderer-button">Check out my 3D wireframe renderer</div>
+                </div>
             <div class="renderer-container shrink-out scroll-animation" id="renderer-container">
                 <table id="controls">
                     <tr class="large-icon">
@@ -106,14 +126,31 @@
                     </tr>
                 </table>
                 <div class="renderer-text">
-                    Made without any libraries. All projection, clipping, rasterising, and rendering algorithms have been designed by me, with a lot of maths and a lot of dedication.
+                    Made without any graphics libraries. All projection, clipping, rasterising, and rendering algorithms have been designed by me, with a lot of maths and a lot of dedication.
                 </div>
                 <div class="window-container">
                     <canvas id="window"></canvas>
                 </div>
             </div>
+            <div id="contacts-scroll"></div>
         </div>
-        <div class="contact" id="contact"></div>
+        <div class="contact" id="contact">
+            <h1>Contact Me</h1>
+            <div class="contact-types">
+                <a href="mailto:elliotgooding1@gmail.com" class="email" id="email">
+                    <h3>Email</h3>
+                    <img src="icons/email.png">
+                </a>
+                <a href="https://github.com/Elliot-Gooding" class="github" id="github">
+                    <h3>GitHub</h3>
+                    <img src="icons/github.png">
+                </a>
+                <a href="https://elliotgooding.co.uk/" class="website" id="website">
+                    <h3>Website</h3>
+                    <img src="icons/website.png">
+                </a>
+            </div>
+        </div>
     </div>
     <script src="greeting-animation.js"></script>
     <script src="scroll-animation.js"></script>

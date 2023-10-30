@@ -3,9 +3,11 @@
 //Creates world objects
 objectsToRender = buildScene();
 
-requestAnimationFrame(refreshCycle);
 function refreshCycle(){
+    console.log("refreshing renderer");
     move();
     draw(objectsToRender);
-    requestAnimationFrame(refreshCycle);
+    if (runningRenderer){
+        requestAnimationFrame(refreshCycle);
+    }
 }

@@ -16,8 +16,10 @@ function exitRenderer(event) {
 document.addEventListener('keyup', exitRenderer);
 
 
-const loadBtn = document.getElementById("renderer-button");
-loadBtn.onclick = function(e){
+document.getElementById("renderer-button").addEventListener('click', loadRenderer);
+
+function loadRenderer(e){
+    requestAnimationFrame(refreshCycle);
     runningRenderer = true;
     document.getElementById('projects-scroll').scrollIntoView();
     document.getElementById("projects-text-wrapper").classList.add("slide-out");
@@ -47,3 +49,4 @@ setInterval(() => {
         document.exitPointerLock();
     }
 }, 16);
+
