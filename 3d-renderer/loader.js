@@ -1,9 +1,7 @@
 let runningRenderer = false;
 
-document.addEventListener('keyup', function(event) {
-    event.preventDefault()
-    console.log(event.code);
-    if (event.code == "Escape" && runningRenderer === true) {
+function exitRenderer(event) {
+    if ( (event.code == "Escape" || event == "Escape") && runningRenderer === true) {
         runningRenderer = false;
         document.getElementById("renderer-container").classList.remove("expand-in");
         document.getElementById("renderer-container").classList.add("shrink-out");
@@ -13,7 +11,9 @@ document.addEventListener('keyup', function(event) {
             }
         }, 600);
     }
-});
+}
+
+document.addEventListener('keyup', exitRenderer);
 
 
 const loadBtn = document.getElementById("renderer-button");
@@ -28,3 +28,22 @@ loadBtn.onclick = function(e){
         }
     }, 600);
 }
+
+const rendererObserver = new IntersectionObserver((element) => {
+    element.forEach( (element) => {
+        if (!element.isIntersecting && runningRenderer === true){
+            exitRenderer("Escape");
+        }
+    });
+});
+
+const rendererElement = document.getElementById("renderer-container");
+rendererObserver.observe(rendererElement);
+
+setInterval(() => {
+    if (runningRenderer){
+        document.body.requestPointerLock();  
+    } else {
+        document.exitPointerLock();
+    }
+}, 16);
