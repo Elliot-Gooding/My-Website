@@ -8,8 +8,8 @@ canvas.height = cam.screenHeight;
 function draw(objectsToRender){
     clearScreen();
     const pixels = [];
-    cam.screenWidth = window.innerWidth * 38/100;
-    cam.screenHeight = window.innerWidth * 38/100;
+    cam.screenWidth = window.innerWidth * 30/100;
+    cam.screenHeight = window.innerWidth * 30/100;
     canvas.width = cam.screenWidth;
     canvas.height = cam.screenHeight;
     objectsToRender.forEach(object => {

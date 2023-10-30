@@ -19,13 +19,6 @@ document.onmousemove = function(event){
 
 
 
-//Hides pointer on click
-document.getElementById("renderer-button").addEventListener("click", function(){
-    document.body.requestPointerLock();
-})
-
-
-
 //Handles the angle at which the character should move along the XZ plane
 function move(){
     if (pressedKeys[87]){
