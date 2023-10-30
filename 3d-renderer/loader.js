@@ -1,8 +1,30 @@
-const loadBtn = document.getElementById("renderer-button")
+let runningRenderer = false;
+
+document.addEventListener('keyup', function(event) {
+    event.preventDefault()
+    console.log(event.code);
+    if (event.code == "Escape" && runningRenderer === true) {
+        runningRenderer = false;
+        document.getElementById("renderer-container").classList.remove("expand-in");
+        document.getElementById("renderer-container").classList.add("shrink-out");
+        setTimeout(() => {
+            if (!runningRenderer){
+                document.getElementById("projects-text-wrapper").classList.remove("slide-out");
+            }
+        }, 600);
+    }
+});
+
+
+const loadBtn = document.getElementById("renderer-button");
 loadBtn.onclick = function(e){
-    document.getElementById("projects-text-wrapper").classList.add("slide-out")
+    runningRenderer = true;
+    document.getElementById('projects-scroll').scrollIntoView();
+    document.getElementById("projects-text-wrapper").classList.add("slide-out");
     setTimeout(() => {
-        document.getElementById("renderer-container").classList.remove("shrink-out")
-        document.getElementById("renderer-container").classList.add("expand-in")
+        if (runningRenderer){
+            document.getElementById("renderer-container").classList.remove("shrink-out");
+            document.getElementById("renderer-container").classList.add("expand-in");
+        }
     }, 600);
 }

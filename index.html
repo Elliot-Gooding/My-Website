@@ -77,7 +77,7 @@
             <div id="projects-scroll"></div>
         </div>
         <div class="projects" id="projects">
-            <div class="projects-text-wrapper" id="projects-text-wrapper">
+            <div class="projects-text-wrapper scroll-animation" id="projects-text-wrapper">
                 <h1>My Projects</h1>
                 <ul>
                     <li>3D Wireframe Renderer</li>
@@ -89,16 +89,41 @@
                 </ul>
                 <button class="renderer-button" id="renderer-button">Try out my 3D wireframe renderer</button>
             </div>
-            <div class="renderer-container shrink-out" id="renderer-container">
-                <div class="text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
-                <div class="window">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+            <div class="renderer-container shrink-out scroll-animation" id="renderer-container">
+                <div class="renderer-text">
+                    <table id="controls">
+                        <tr class="large-icon">
+                            <td><img src="icons/esc-icon.png"></td>
+                            <td>Go back</td>
+                        </tr>
+                        <tr class="small-icon">
+                            <td><img src="icons/w.png"><img src="icons/a.png"><img src="icons/s.png"><img src="icons/d.png"></td>
+                            <td>Movement</td>
+                        </tr>
+                        <tr class="large-icon">
+                            <td><img src="icons/mouse.png"></td>
+                            <td>Look around</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="window-container">
+                    <canvas id="window"></canvas>
+                </div>
             </div>
         </div>
         <div class="contact" id="contact"></div>
     </div>
-
     <script src="greeting-animation.js"></script>
-    <script src="fade-in-animation.js"></script>
+    <script src="scroll-animation.js"></script>
     <script src="3d-renderer\loader.js"></script>
+    <script src="3d-renderer\classes.js"></script>
+    <script src="3d-renderer\clipper.js"></script>
+    <script src="3d-renderer\settings.js"></script>
+    <script src="3d-renderer\movement.js"></script>
+    <script src="3d-renderer\projection.js"></script>
+    <script src="3d-renderer\rendering.js"></script>
+    <script src="3d-renderer\scene.js"></script>
+    <script src="3d-renderer\triangle-class.js"></script>
+    <script src="3d-renderer\main.js"></script>
 </body>
 </html>
