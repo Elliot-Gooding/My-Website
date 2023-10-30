@@ -1,11 +1,11 @@
 const observer = new IntersectionObserver((element) => {
     element.forEach( (element) => {
         if (element.isIntersecting){
-            element.target.classList.remove("fade-out");
-            element.target.classList.add("fade-in");
+            element.target.classList.remove("hidden");
+            element.target.classList.add("show");
         } else {
-            element.target.classList.remove("fade-in");
-            element.target.classList.add("fade-out");
+            element.target.classList.remove("show");
+            element.target.classList.add("hidden");
         }
     });
 });

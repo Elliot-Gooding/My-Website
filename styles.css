@@ -78,7 +78,7 @@ body{
     left:50vw;
     border-radius: 5px;
     opacity: 0;
-    transition: opacity 5s;
+    transition: opacity 3s;
 }
 
 .ball-fade-in{
@@ -152,12 +152,12 @@ body{
     opacity: 0;
 }
 
-.skills .fade-in{
+.skills .show{
     transition: opacity 2s;
     opacity: 1;
 }
 
-.skils .fade-out{
+.skils .hidden{
     opacity: 0;
     transition: opacity 0s;
 }
@@ -280,12 +280,12 @@ body{
     height:75vh;
     border:2px;
     border-radius: 0.5vw;
-    background-color: rgb(31, 21, 108);
+    background-color: rgb(0,53,95);
     color:rgb(208, 208, 208);
     padding:1.5vw;
     box-shadow: 0 7px 12px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1);
     opacity: 1;
-    transition: transform 3s, opacity 1s;
+    transition: transform 2s, opacity 1s;
 }
 
 .slide-out{
@@ -314,8 +314,8 @@ body{
   }
 
 .renderer-button {  
-    --colour1: rgb(31, 21, 108);
-    --colour2: rgb(31, 21, 108);
+    --colour1: rgb(0,53,95);
+    --colour2: rgb(0,53,95);
     border: rgb(23, 57, 150) solid 0.2vw;
     background: linear-gradient(to right, var(--colour1), var(--colour2));
     border-radius: 2vw;
@@ -344,6 +344,11 @@ body{
 
 .renderer-container{
     position:absolute;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 75vh;
+    column-gap:0px;
+    row-gap:0px;
     margin-left:22.65vw;
     top:5vh;
     width:calc(100vw - 22.65vw - 22.65vw);
@@ -358,6 +363,12 @@ body{
     transition: transform 1s, opacity 2s;
 }
 
+.renderer-container div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .shrink-out{
     transition: transform 1s, opacity 2s;
     opacity: 0;
@@ -370,8 +381,35 @@ body{
     transform:scale(1);
 }
 
+#controls{
+    font-size: 1.7vw;
+}
+
+.renderer-text{
+    float:left;
+    font-size: 2vw;
+}
+
+.large-icon td img{
+    width:3vw;
+}
+
+.small-icon td img{
+    width:1.5vw
+}
+
+
+.window-container{
+    background-color: white;
+    float:right;
+    width:38vw;
+    height:38vw;
+    border-radius: 0.5vw;
+}
+
 .window{
-    
+    width:100%;
+    height:100%;
 }
 
 .contact{
