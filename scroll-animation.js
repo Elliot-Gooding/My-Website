@@ -53,6 +53,7 @@ function hideProjects(){
 const projectsObserver = new IntersectionObserver((element) => {
     element.forEach( (element) => {
         if (element.isIntersecting && projectsShowing === false){
+            projectsShowing=true
             line.style.animation = 'none';
             document.getElementById("renderer-error").style.opacity = 0;
             const projectContainer = document.getElementById("projects-text-wrapper");
