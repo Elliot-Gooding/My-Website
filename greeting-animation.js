@@ -36,11 +36,10 @@ class Ball{
 
     startBall(){
         this.offSet();
-        const refreshCycle = setInterval(() => {
+        this.refreshCycle = setInterval(() => {
             this.move();
             this.display();
             if (this.ballOutOfRender()){
-                clearInterval(refreshCycle);
                 this.terminateBall();
             }
         }, 10);
@@ -84,7 +83,7 @@ class Ball{
         const minY = -this.size;
         if (
             ( this.x > 100 || this.x < minX ) ||
-            ( this.y > 100 || this.y < minY )
+            ( this.y > 93 || this.y < minY )
         ) {
             return true;
         } else {
@@ -93,7 +92,11 @@ class Ball{
     }
 
     terminateBall(){
-        this.ballElement.remove();
+        this.ballElement.style.opacity = 0;
+        setTimeout(() => {
+            this.ballElement.remove();
+            clearInterval(this.refreshCycle);
+        }, 3000);
     }
 
     sin(angle){
