@@ -180,45 +180,45 @@ body{
     transition-delay: 300ms;
 }
 
-.skills > div{
-    width:30vw;
-    height:20vw;
+.skills > div {
+    width: 30vw;
+    height: 20vw;
     border: 0.12vw solid rgb(0, 4, 71);
     border-radius: 1vw;
-    background-color: rgb(0,53,95);
-    padding:0.8vw;
+    background-color: rgb(0, 53, 95);
+    padding: 0.8vw;
     box-shadow: 0 7px 12px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1);
+}
+
+.about-me,
+.languages,
+.qualifications {
+    font-size: 2vh;
+    align-content: center;
+    justify-content: center;
+    padding: 1vw;
 }
 
 @media (max-width: 700px) {
     .skills {
         flex-direction: column; /* Change to a vertical layout */
     }
-    .skills > div{
-        width:60vw;
-        height:20vh;
-        font-size: 1.8vw;
+
+    .about-me {
+        font-size: 1.65vh;
+    }
+
+    .languages,
+    .qualifications {
+        font-size: 1.1vh;
+    }
+
+    .skills > div {
+        width: 60vw;
+        height: 20vh;
     }
 }
 
-.about-me{
-    font-size: 1vw;
-    align-content: center;
-    justify-content: center;
-}
-
-.languages{
-    padding: 1vw;
-    font-size: 1.2vw;
-    align-content: center;
-    justify-content: center;
-}
-
-.qualifications{
-    font-size: 1vw;
-    align-content: center;
-    justify-content: center;
-}
 
 
 .languages ul{
@@ -336,6 +336,7 @@ body{
     stroke-dasharray: [actual length];
     stroke-dashoffset: [actual length];
     animation: drawLine 4s linear forwards;
+    opacity: 1;
 }
   
 @keyframes drawLine {
@@ -343,6 +344,19 @@ body{
       stroke-dashoffset: 0;
     }
 }
+
+@media (max-width: 650px){
+    .project-svg{
+        transform: translate(-2vw,-28vh);
+    }
+}
+
+@media (max-width: 550px), (max-height: 520px) {
+    .animated-line{
+        opacity: 0;
+    }
+}
+
 
 @property --colour1 {
     syntax: '<color>';
@@ -569,15 +583,28 @@ body{
     left:40vw;
 }
 
-#github > img{
-    display:block;
-    width: auto;
-    height: auto;
-}
-
-
 #website{
     right:10vw
+}
+
+@media (max-width: 700px) {
+    #email{
+        left: 40vw;
+    }
+    
+    #github{
+        left: 40vw;
+        top:35vw;
+    }
+    
+    #website{
+        left: 40vw;
+        top:70vw;
+    }
+
+    .contact{
+        padding-bottom: 120vw;
+    }
 }
 
 a, a:hover, a:visited, a:active {
