@@ -10,11 +10,13 @@ window.onkeydown = function(e) { pressedKeys[e.keyCode] = true; };
 
 //Handles mouse movement for yaw (panning)
 document.onmousemove = function(event){
-    cam.yaw += event.movementX * cam.mouseSpeed * 0.1;
-    while (cam.yaw>360) {cam.yaw -= 360};
-    while (cam.yaw<0) (cam.yaw+=360);
-
-    cam.pitch -= event.movementY * cam.mouseSpeed * 0.1;
+    if (runningRenderer){
+        cam.yaw += event.movementX * cam.mouseSpeed * 0.1;
+        while (cam.yaw>360) {cam.yaw -= 360};
+        while (cam.yaw<0) (cam.yaw+=360);
+    
+        cam.pitch -= event.movementY * cam.mouseSpeed * 0.1;
+    }
 };
 
 

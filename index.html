@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Elliot Gooding</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <script src="https://kit.fontawesome.com/8f403a495d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="header-wrapper">
+    <div class="header-wrapper" id="header-wrapper">
         <header class="header">
-            <div></div>
             <div class="item1" onClick="document.getElementById('greeting').scrollIntoView();">
                 <h5>Home</h5>
             </div>
@@ -28,7 +27,6 @@
             </div>
         </header>
     </div>
-    <hr class="header-divider">
     <div class="content-layout">
         <div class="greeting" id="greeting">
             <div class="greeting-background" id="greeting-background"></div>
@@ -77,8 +75,8 @@
             <div id="projects-scroll"></div>
         </div>
         <div class="projects" id="projects">
-            <div class="projects-text-wrapper scroll-animation" id="projects-text-wrapper">
-                <h1 id="project-title">My Projects</h1>
+            <div class="projects-text-wrapper hide-projects" id="projects-text-wrapper">
+                <h1 id="project-title" class="scroll-animation">My Projects</h1>
                 <svg id="project-svg" class="project-svg" width="25vw" height="60vh" viewbox="50 25 350 250">
                     <path class="animated-line" style="color:none; fill:none; stroke:rgb(0,3,34); stroke-width:0.3; stroke-linecap:round; stroke-linejoin:round; -inkscape-stroke:none;" id="animated-line" d="m 76.787901,83.475354 c -0.07268,-0.0013 -0.132805,0.05625 -0.134765,0.128906 -0.0013,0.07268 0.05625,0.132806 0.128906,0.134766 0.993965,0.02161 1.445192,0.529919 1.679687,1.046875 0.234496,0.516956 0.226563,1.033203 0.226563,1.033203 -1.9e-5,0.0013 -1.9e-5,0.0026 0,0.0039 l -0.07063,71.102426 c -1.76e-4,0.0727 0.251135,0.053 0.323794,0.0539 0.03834,0.0206 0.01898,-47.70777 0.01881,-47.78119 l -0.0083,-23.373173 v -0.002 c 4.3e-5,-0.0018 0.01444,-0.567817 -0.248047,-1.146484 -0.262916,-0.579609 -0.8299,-1.177561 -1.916016,-1.201172 z m 0.153505,-8.45387 c -2.413422,0 -4.361328,1.947906 -4.361328,4.361328 0,2.413423 1.947906,4.359375 4.361328,4.359375 h 19.533203 c 2.413423,0 4.361331,-1.945952 4.361331,-4.359375 0,-2.413422 -1.947908,-4.361328 -4.361331,-4.361328 z m 0,0.265625 h 19.533203 c 2.271197,0 4.095701,1.824507 4.095701,4.095703 0,2.271197 -1.824504,4.095704 -4.095701,4.095704 H 76.941406 c -2.271196,0 -4.095703,-1.824507 -4.095703,-4.095704 0,-2.271196 1.824507,-4.095703 4.095703,-4.095703 z" fill="transparent"/>
                 </svg>
@@ -108,8 +106,9 @@
                         <td class="project">tic-tac-toe</td>
                     </tr>
                 </table>
-                    <div class="renderer-button hide-renderer-button" id="renderer-button">Check out my 3D wireframe renderer</div>
-                </div>
+                <div class="renderer-button hide-renderer-button" id="renderer-button">Check out my 3D wireframe renderer</div>
+                <div class="renderer-error" id="renderer-error">A computer is required. <a href="https://github.com/Elliot-Gooding/My-Website/">GitHub link</a></div>
+            </div>
             <div class="renderer-container shrink-out scroll-animation" id="renderer-container">
                 <table id="controls">
                     <tr class="large-icon">
@@ -137,17 +136,14 @@
         <div class="contact" id="contact">
             <h1>Contact Me</h1>
             <div class="contact-types">
-                <a href="mailto:elliotgooding1@gmail.com" class="email" id="email">
-                    <h3>Email</h3>
-                    <img src="icons/email.png">
+                <a href="mailto:myemail@elliotgooding.co.uk" class="email" id="email">
+                    <i class="fas fa-envelope"></i> <span class="contact-text">elliotgooding1@gmail.com</span>
                 </a>
                 <a href="https://github.com/Elliot-Gooding" class="github" id="github">
-                    <h3>GitHub</h3>
-                    <img src="icons/github.png">
+                    <i class="fa-brands fa-github"></i> <span class="contact-text">github.com/Elliot-Gooding</span>
                 </a>
                 <a href="https://elliotgooding.co.uk/" class="website" id="website">
-                    <h3>Website</h3>
-                    <img src="icons/website.png">
+                    <i class="fas fa-globe"></i> <span class="contact-text">elliotgooding.co.uk</span>
                 </a>
             </div>
         </div>

@@ -74,16 +74,17 @@ class Ball{
     display(){
         this.ballElement.style.left = this.x + "vw";
         this.ballElement.style.top = this.y + "vh";
-        this.ballElement.style.width = this.size/15 + "vw";
-        this.ballElement.style.height = this.size/15 + "vw";
-        this.ballElement.style.borderRadius = this.size/30 + "vw";
+        this.ballElement.style.width = this.size/20 + "vw";
+        this.ballElement.style.height = this.size/20 + "vw";
+        this.ballElement.style.borderRadius = this.size/40 + "vw";
     }
 
     ballOutOfRender(){
         const minX = -this.size;
+        const minY = -this.size;
         if (
             ( this.x > 100 || this.x < minX ) ||
-            ( this.y > 100 || this.y < 0 )
+            ( this.y > 100 || this.y < minY )
         ) {
             return true;
         } else {

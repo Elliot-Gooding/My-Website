@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
 *{
     /* box-sizing: border-box;
     outline: 1px solid limegreen !important; */
@@ -5,6 +7,8 @@
 
 html{
     scroll-behavior:smooth;
+    font-family: 'JetBrains Mono', monospace;
+
 }
 
 html::-webkit-scrollbar {
@@ -14,7 +18,6 @@ html::-webkit-scrollbar {
 body{
     margin:0px;
     height:300vh;
-    font-family: 'Source Sans Pro', sans-serif;
     overflow-x: hidden;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -33,28 +36,34 @@ body{
 .header-wrapper{
     position:fixed;
     z-index: 10;
-    width:100vw;
-    height:100px
+    width:80vw;
+    padding-left:27.5vw;
+    transition: transform 500ms;
 }
 
 .header{
     color:rgb(208, 208, 208);
-    background-image: linear-gradient(to right,rgb(0,3,34), rgb(0,53,95), rgb(0,3,34));
     display: inline-grid;
-    width:100vw;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 10vh;
+    width:45vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 5vh;
     column-gap:0px;
     row-gap:0px;
+    padding-top: 1vh;
 }
 
-.header > div{
+.header div:last-child{
+    border: none;
+}
+
+.header div{
     display: flex;
     justify-content: center;
     align-content: center;
     text-align: center;
     flex-direction: column;
     font-size: 2vw;
+    border-right: rgb(255, 255, 255) solid 2px;
     cursor:pointer;
 }
 
@@ -88,7 +97,7 @@ body{
 }
 
 .ball-fade-in{
-    opacity: 1;
+    opacity: 0.8;
 }
 
 .greeting{
@@ -115,6 +124,7 @@ body{
 
 .small-greeting-text{
     font-size: 1vw;
+    color: rgb(46, 60, 204);
 }
 
 .large-greeting-text{
@@ -182,7 +192,7 @@ body{
 
 .skills > div {
     width: 30vw;
-    height: 20vw;
+    height: max-content;
     border: 0.12vw solid rgb(0, 4, 71);
     border-radius: 1vw;
     background-color: rgb(0, 53, 95);
@@ -199,7 +209,7 @@ body{
     padding: 1vw;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     .skills {
         flex-direction: column; /* Change to a vertical layout */
     }
@@ -215,7 +225,7 @@ body{
 
     .skills > div {
         width: 60vw;
-        height: 20vh;
+        height: max-content;
     }
 }
 
@@ -274,13 +284,13 @@ body{
 }
 
 .projects{
-    background: linear-gradient(rgb(0,3,34), rgb(0,53,95));
+    background: rgb(0,3,34);
     position:relative;
 }
 
 .projects-text-wrapper{
     position:absolute;
-    margin-left:22.65vw;
+    left:10.65vw;
     top:5vh;
     width:calc(100vw - 22.65vw - 22.65vw);
     height:75vh;
@@ -291,7 +301,17 @@ body{
     padding:1.5vw;
     box-shadow: 0 7px 12px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1);
     opacity: 1;
-    transition: transform 2s, opacity 1s;
+    transition: transform 1s, opacity 1s;
+}
+
+.show-projects{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hide-projects{
+    opacity: 0;
+    transform: translateX(-50%);
 }
 
 .slide-out{
@@ -300,8 +320,9 @@ body{
 }
 
 .projects-text-wrapper h1{
-    font-size: 4vw;
+    font-size: 3vw;
 }
+
 .projects-text-wrapper *{
     font-size: 3.5vh;
 }
@@ -313,7 +334,7 @@ body{
 .project-svg{
     position:absolute;
     z-index: 1;
-    transform: translate(-2vw,-25.6vh);
+    transform: translate(-2vw,-24.5vh);
 }
 
 #animated-line{
@@ -413,13 +434,32 @@ body{
     text-decoration: none;
     display: inline-block;
     position:absolute;
-    font-size: 3vw;
+    font-size: 2.4vw;
     cursor: pointer;
     left:3vw;
     top:64vh;
     box-shadow: 0 3px 6px 0 rgb(0, 0, 0);
     opacity: 0;
     transition: opacity 2s, --colour1 400ms, --colour2 400ms;
+}
+
+@keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    33.3% {
+      transform: translateX(-1%);
+    }
+    66.7% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(+1%);
+    }
+}
+
+.shake {
+    animation: shake 0.1s ease infinite;
 }
 
 .show-renderer-button{
@@ -438,6 +478,25 @@ body{
 .renderer-button:active {
     top:64.3vh;
     box-shadow: 0 2px 4px 0 rgb(0, 0, 0);
+}
+
+.renderer-error{
+    font-size: 2.7vh;
+    position:absolute;
+    top:74vh;
+    left:12vw;
+    opacity: 0;
+    transition: opacity 500ms;
+}
+
+.renderer-error a{
+    font-size: 2.7vh;
+    text-decoration: underline;
+}
+
+.renderer-error a:hover{
+    color: blue;
+    text-decoration: underline;
 }
 
 .renderer-container{
@@ -522,7 +581,7 @@ body{
 }
 
 .contact{
-    background: linear-gradient(rgb(0,53,95),rgb(97, 78, 205));
+    background: rgb(0,3,34);
     color:rgb(208, 208, 208);
 }
 
@@ -538,73 +597,40 @@ body{
 .contact-types{
     position:relative;
     z-index: 2;
-    padding-right: 10vw;
-    padding-left: 10vw;
 }
 
 .contact-types a{
     position:absolute;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    flex-direction: column;
-    width:20vw;
-    height:30vw;
-    border: rgb(23, 57, 150) solid 0.2vw;
-    border-radius: 1vw;
-    --colour1: rgb(0,53,95);
-    --colour2: rgb(0,53,95);
-    background: linear-gradient(to right, var(--colour1), var(--colour2));;
+    font-size: 2vw;
+    width:max-content;
+    height:max-content;
+    border-radius: 25vw;
     cursor: pointer;
     padding:0.8vw;
-    box-shadow: 0 7px 12px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1);
-    transition: --colour1 400ms, --colour2 400ms;
+    padding-left: 2vw;
+    padding-right: 2vw;
 }
-.contact-types a:hover {
-    --colour2: rgb(46, 60, 204);
-    --colour1: rgb(97, 78, 205);
+
+.contact-text:hover {
+    text-decoration: underline;
 }
 
 .contact-types a:active {
-    transform: translateY(1%);
-    box-shadow: 0 2px 4px 0 rgb(0, 0, 0);
-}
-
-.contact-types h3{
-    font-size: calc(3* 0.5 * (1vh + 1vw));
+    transform: translateY(2%);
 }
 
 #email{
-    left:10vw;
+    left: 10vw;
 }
 
 #github{
-    left:40vw;
+    left: 10vw;
+    top:7vw;
 }
 
 #website{
-    right:10vw
-}
-
-@media (max-width: 700px) {
-    #email{
-        left: 40vw;
-    }
-    
-    #github{
-        left: 40vw;
-        top:35vw;
-    }
-    
-    #website{
-        left: 40vw;
-        top:70vw;
-    }
-
-    .contact{
-        padding-bottom: 120vw;
-    }
+    left: 10vw;
+    top:14vw;
 }
 
 a, a:hover, a:visited, a:active {
