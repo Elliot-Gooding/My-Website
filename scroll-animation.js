@@ -31,7 +31,7 @@ function showProjects(){
         setTimeout(() => {
             rendererButton.classList.add("show-renderer-button");
             rendererButton.classList.remove("hide-renderer-button");
-        }, 3000);
+        }, 1000);
     }
 }
 
