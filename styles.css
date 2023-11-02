@@ -87,7 +87,7 @@ body{
 }
 
 .greeting-background{
-    position:relative;
+    position:absolute;
 }
 
 .ball{
