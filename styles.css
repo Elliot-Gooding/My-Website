@@ -288,6 +288,10 @@ body{
     background-size: 1vw 1vw;
 }
 
+.qualifications td:last-child{
+    padding-left: 2vw;
+}
+
 #projects-scroll{
     position:absolute;
     top: 90vh;
