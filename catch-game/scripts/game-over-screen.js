@@ -185,6 +185,6 @@ $(".restart-game-button").click(function(){
     score = 0
     spawnRate = 0.01;
     missedItems = 0
-    player = new Player(new Vec2(200, 500), 50, fallingObjects, "assets/images/blackhole.png");
+    player = new Player(new Vec2(200, 500), 50, fallingObjects, "./images/blackhole.png");
     player.lives = 3;
 });
